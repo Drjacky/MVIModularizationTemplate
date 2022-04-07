@@ -7,14 +7,16 @@ pluginManagement {
     }
 }
 dependencyResolutionManagement {
+    @Suppress("UnstableApiUsage")
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    @Suppress("UnstableApiUsage")
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
-        maven { url 'https://plugins.gradle.org/m2/' }
+        maven("https://jitpack.io")
+        maven("https://plugins.gradle.org/m2/")
     }
 }
 rootProject.name = "MVIModularizationTemplate"
-include ':app'
-include ':common:models'
+include(":app")
+include(":common:models")
