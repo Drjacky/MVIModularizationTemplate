@@ -23,13 +23,3 @@ buildscript {
         classpath(app.web.drjackycv.buildsrc.Depends.ClassPaths.sonarqube_gradle_plugin)
     }
 }
-
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven("https://maven.google.com/")
-        maven("https://jitpack.io")
-        maven("https://plugins.gradle.org/m2/")
-    }
-}
