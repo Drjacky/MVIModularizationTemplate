@@ -1,0 +1,83 @@
+import app.web.drjackycv.buildsrc.Depends
+
+plugins {
+    id("com.android.library")
+    kotlin("android")
+    id("kotlin-parcelize")
+    kotlin("kapt")
+}
+
+android {
+
+    compileSdkVersion(Depends.Versions.androidCompileSdkVersion)
+
+    defaultConfig {
+        multiDexEnabled = true
+        vectorDrawables.useSupportLibrary = true
+        minSdkVersion(Depends.Versions.minSdkVersion)
+        targetSdkVersion(Depends.Versions.targetSdkVersion)
+        testInstrumentationRunner =
+            Depends.Versions.testInstrumentationRunner
+        consumerProguardFiles("consumer-rules.pro")
+    }
+    compileOptions {
+        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    sourceSets {
+        val test by getting
+
+        map {
+            it.java.srcDir("src/${it.name}/kotlin")
+            //test.java.srcDir("${project(":domain").projectDir}/src/test/java")
+        }
+    }
+    buildTypes {
+        named("debug") { }
+        named("release") {
+            isMinifyEnabled = true
+            setProguardFiles(
+                listOf(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+                )
+            )
+        }
+    }
+
+}
+
+dependencies {
+    implementation(Depends.Libraries.kotlin)
+    implementation(Depends.Libraries.android_core_ktx)
+    implementation(Depends.Libraries.paging_runtime_ktx)
+    implementation(Depends.Libraries.paging_rx)
+    implementation(Depends.Libraries.multidex)
+    //parser
+    api(Depends.Libraries.converter_gson)
+    //network
+    implementation(Depends.Libraries.retrofit)
+    implementation(Depends.Libraries.retrofit_adapter_rx)
+    implementation(Depends.Libraries.logging_interceptor)
+    debugImplementation(Depends.Libraries.chucker)
+    releaseImplementation(Depends.Libraries.chucker_no_op)
+    //other
+    implementation(Depends.Libraries.timber)
+    implementation(Depends.Libraries.material)
+    //test
+    testImplementation(Depends.Libraries.junit)
+    testImplementation(Depends.Libraries.mockito_core)
+    testImplementation(Depends.Libraries.mockito_inline)
+    testImplementation(Depends.Libraries.mockito_kotlin)
+    testImplementation(Depends.Libraries.mockk)
+    testImplementation(Depends.Libraries.coroutines_test)
+    testImplementation(Depends.Libraries.arch_core_testing)
+}

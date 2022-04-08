@@ -20,3 +20,4 @@ dependencyResolutionManagement {
 rootProject.name = "MVIModularizationTemplate"
 include(":app")
 include(":common:models")
+include(":core:network")
