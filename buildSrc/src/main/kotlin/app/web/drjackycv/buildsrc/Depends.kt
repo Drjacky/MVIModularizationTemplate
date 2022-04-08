@@ -55,6 +55,7 @@ object Depends {
         const val glideVersion = "4.13.1"
         const val autoDispose = "2.1.1"
         const val dataStorePreferenceVersion = "1.0.0"
+        const val apolloGraphqlVersion = "3.2.1"
 
         const val mockitoKotlinVersion = "2.2.0"
         const val mockitoCoreVersion = "4.3.1"
@@ -170,6 +171,8 @@ object Depends {
             "com.github.chuckerteam.chucker:library-no-op:${Versions.chuckerVersion}"
         const val dataStore_preferences =
             "androidx.datastore:datastore-preferences:${Versions.dataStorePreferenceVersion}"
+        const val apollo_graphql_runtime =
+            "com.apollographql.apollo3:apollo-runtime:${Versions.apolloGraphqlVersion}"
     }
 
     object Environments {
