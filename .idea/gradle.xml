@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/common/models" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/network" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/splash" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

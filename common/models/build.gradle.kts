@@ -83,6 +83,7 @@ dependencies {
     implementation(Depends.Libraries.material)
     //test
     testImplementation(Depends.Libraries.junit)
+    testImplementation(Depends.Libraries.test_ext_junit)
     testImplementation(Depends.Libraries.mockito_core)
     testImplementation(Depends.Libraries.mockito_inline)
     testImplementation(Depends.Libraries.mockito_kotlin)
