@@ -5,17 +5,18 @@ plugins {
     kotlin("android")
     id("kotlin-parcelize")
     kotlin("kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
 
-    compileSdkVersion(Depends.Versions.androidCompileSdkVersion)
+    compileSdk = Depends.Versions.androidCompileSdkVersion
 
     defaultConfig {
         multiDexEnabled = true
         vectorDrawables.useSupportLibrary = true
-        minSdkVersion(Depends.Versions.minSdkVersion)
-        targetSdkVersion(Depends.Versions.targetSdkVersion)
+        minSdk = Depends.Versions.minSdkVersion
+        targetSdk = Depends.Versions.targetSdkVersion
         testInstrumentationRunner =
             Depends.Versions.testInstrumentationRunner
         consumerProguardFiles("consumer-rules.pro")
@@ -41,9 +42,20 @@ android {
         }
     }
     buildTypes {
-        named("debug") { }
+        named("debug") {
+            buildConfigField(
+                "String",
+                "BASE_URL",
+                "\"" + Depends.Environments.debugBaseUrl + "\""
+            )
+        }
         named("release") {
             isMinifyEnabled = true
+            buildConfigField(
+                "String",
+                "BASE_URL",
+                "\"" + Depends.Environments.releaseBaseUrl + "\""
+            )
             setProguardFiles(
                 listOf(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -61,14 +73,18 @@ dependencies {
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
     implementation(Depends.Libraries.multidex)
-    //parser
-    api(Depends.Libraries.converter_gson)
+    //dependency injection
+    implementation(Depends.Libraries.hilt_android)
+    kapt(Depends.Libraries.hilt_android_compiler)
+    kapt(Depends.Libraries.hilt_compiler)
+    implementation(Depends.Libraries.java_inject)
     //network
     implementation(Depends.Libraries.retrofit)
     implementation(Depends.Libraries.retrofit_adapter_rx)
     implementation(Depends.Libraries.logging_interceptor)
     debugImplementation(Depends.Libraries.chucker)
     releaseImplementation(Depends.Libraries.chucker_no_op)
+    implementation(Depends.Libraries.apollo_graphql_runtime)
     //other
     implementation(Depends.Libraries.timber)
     implementation(Depends.Libraries.material)
