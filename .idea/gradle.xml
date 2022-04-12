@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/network" />
             <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/main" />
             <option value="$PROJECT_DIR$/features/splash" />
           </set>
         </option>
