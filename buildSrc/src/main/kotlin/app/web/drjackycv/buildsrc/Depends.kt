@@ -50,11 +50,12 @@ object Depends {
         const val hiltNavigationComposeVersion = "1.0.0-alpha03"
         const val javaxInjectVersion = "1"
         const val timberVersion = "5.0.1"
-        const val lottieVersion = "4.2.2"
+        const val lottieVersion = "5.0.3"
         const val glideVersion = "4.13.1"
         const val autoDispose = "2.1.1"
         const val dataStorePreferenceVersion = "1.0.0"
         const val apolloGraphqlVersion = "3.2.1"
+        const val arrowVersion = "1.0.1"
 
         const val mockitoKotlinVersion = "2.2.0"
         const val mockitoCoreVersion = "4.3.1"
@@ -171,6 +172,7 @@ object Depends {
             "androidx.datastore:datastore-preferences:${Versions.dataStorePreferenceVersion}"
         const val apollo_graphql_runtime =
             "com.apollographql.apollo3:apollo-runtime:${Versions.apolloGraphqlVersion}"
+        const val arrow = "io.arrow-kt:arrow-core:${Versions.arrowVersion}"
     }
 
     object Environments {

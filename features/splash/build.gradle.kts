@@ -85,9 +85,14 @@ dependencies {
     debugImplementation(Depends.Libraries.chucker)
     releaseImplementation(Depends.Libraries.chucker_no_op)
     implementation(Depends.Libraries.apollo_graphql_runtime)
+    implementation(Depends.Libraries.arrow)
     //other
     implementation(Depends.Libraries.timber)
     implementation(Depends.Libraries.material)
+    //ui
+    implementation(Depends.Libraries.glide)
+    kapt(Depends.Libraries.glide_compiler)
+    implementation(Depends.Libraries.lottie)
     //test
     testImplementation(Depends.Libraries.junit)
     testImplementation(Depends.Libraries.test_ext_junit)
