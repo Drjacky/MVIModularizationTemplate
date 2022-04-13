@@ -16,7 +16,9 @@
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/common/models" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/navigation" />
             <option value="$PROJECT_DIR$/core/network" />
+            <option value="$PROJECT_DIR$/core/views" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/main" />
             <option value="$PROJECT_DIR$/features/splash" />

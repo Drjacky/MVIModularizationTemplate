@@ -105,4 +105,7 @@ dependencies {
 
     implementation(project(Depends.Common.models))
     implementation(project(Depends.Core.network))
+    implementation(project(Depends.Core.navigation))
+    implementation(project(Depends.Features.splash))
+    implementation(project(Depends.Features.main))
 }

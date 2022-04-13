@@ -2,7 +2,6 @@ import app.web.drjackycv.buildsrc.Depends
 
 plugins {
     id("common-android-lib")
-    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -66,24 +65,17 @@ android {
 dependencies {
     implementation(Depends.Libraries.kotlin)
     implementation(Depends.Libraries.android_core_ktx)
+    api(Depends.Libraries.navigation_fragment_ktx)
+    api(Depends.Libraries.navigation_ui_ktx)
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
     implementation(Depends.Libraries.multidex)
-    //dependency injection
-    implementation(Depends.Libraries.hilt_android)
-    kapt(Depends.Libraries.hilt_android_compiler)
-    kapt(Depends.Libraries.hilt_compiler)
-    implementation(Depends.Libraries.java_inject)
-    //network
-    implementation(Depends.Libraries.retrofit)
-    implementation(Depends.Libraries.retrofit_adapter_rx)
-    implementation(Depends.Libraries.logging_interceptor)
-    debugImplementation(Depends.Libraries.chucker)
-    releaseImplementation(Depends.Libraries.chucker_no_op)
-    implementation(Depends.Libraries.apollo_graphql_runtime)
-    implementation(Depends.Libraries.arrow)
     //other
     implementation(Depends.Libraries.material)
+    //ui
+    implementation(Depends.Libraries.glide)
+    kapt(Depends.Libraries.glide_compiler)
+    implementation(Depends.Libraries.lottie)
     //test
     testImplementation(Depends.Libraries.junit)
     testImplementation(Depends.Libraries.test_ext_junit)

@@ -5,8 +5,9 @@ import app.web.drjackycv.buildsrc.Depends.Versions.appVersionCode
 object Depends {
 
     object Features {
+        val splash = ":features:splash"
+        val main = ":features:main"
         val characters = ":features:characters"
-        val detail = ":features:detail"
     }
 
     object Core {
@@ -40,10 +41,10 @@ object Depends {
         const val supportVersion = "1.4.1"
         const val materialVersion = "1.4.0"
         const val coreKtxVersion = "1.7.0"
-        const val navigationVersion = "2.5.0-alpha04"
+        const val navigationVersion = "2.4.2"
         const val pagingVersion = "3.1.1"
         const val multidexVersion = "2.0.1"
-        const val fragmentExtVersion = "1.4.0"
+        const val fragmentExtVersion = "1.5.0-alpha05"
         const val recyclerviewVersion = "1.3.0-alpha02"
         const val hiltVersion = "2.40.1"
         const val hiltCompilerVersion = "1.0.0"

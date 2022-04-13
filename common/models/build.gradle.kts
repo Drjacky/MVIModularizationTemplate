@@ -79,7 +79,6 @@ dependencies {
     implementation(Depends.Libraries.apollo_graphql_runtime)
     implementation(Depends.Libraries.arrow)
     //other
-    implementation(Depends.Libraries.timber)
     implementation(Depends.Libraries.material)
     //test
     testImplementation(Depends.Libraries.junit)

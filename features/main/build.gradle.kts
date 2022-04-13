@@ -83,7 +83,6 @@ dependencies {
     implementation(Depends.Libraries.apollo_graphql_runtime)
     implementation(Depends.Libraries.arrow)
     //other
-    implementation(Depends.Libraries.timber)
     implementation(Depends.Libraries.material)
     //ui
     implementation(Depends.Libraries.glide)
@@ -98,4 +97,7 @@ dependencies {
     testImplementation(Depends.Libraries.mockk)
     testImplementation(Depends.Libraries.coroutines_test)
     testImplementation(Depends.Libraries.arch_core_testing)
+
+    implementation(project(Depends.Features.splash))
+    implementation(project(Depends.Core.navigation))
 }
