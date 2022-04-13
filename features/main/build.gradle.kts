@@ -1,10 +1,7 @@
 import app.web.drjackycv.buildsrc.Depends
 
 plugins {
-    id("com.android.library")
-    kotlin("android")
-    id("kotlin-parcelize")
-    kotlin("kapt")
+    id("common-android-lib")
     id("dagger.hilt.android.plugin")
 }
 
@@ -19,7 +16,6 @@ android {
         targetSdk = Depends.Versions.targetSdkVersion
         testInstrumentationRunner =
             Depends.Versions.testInstrumentationRunner
-        consumerProguardFiles("consumer-rules.pro")
     }
     compileOptions {
         targetCompatibility = JavaVersion.VERSION_11

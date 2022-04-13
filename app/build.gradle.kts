@@ -60,10 +60,6 @@ android {
         isAbortOnError = false
     }
     //testOptions.unitTests.returnDefaultValues = true
-    packagingOptions {
-        exclude("META-INF/rxjava.properties")
-        exclude("META-INF/proguard/androidx-annotations.pro")
-    }
 }
 
 tasks.withType<KotlinCompile> {

@@ -19,7 +19,6 @@ android {
         targetSdk = Depends.Versions.targetSdkVersion
         testInstrumentationRunner =
             Depends.Versions.testInstrumentationRunner
-        consumerProguardFiles("consumer-rules.pro")
     }
     compileOptions {
         targetCompatibility = JavaVersion.VERSION_11
