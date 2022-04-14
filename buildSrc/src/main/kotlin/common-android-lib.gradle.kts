@@ -51,6 +51,8 @@ android {
 
 dependencies {
     implementation(Depends.Libraries.kotlin)
+    implementation(Depends.Libraries.kotlin_reflect)
     implementation(Depends.Libraries.timber)
+    implementation(Depends.Libraries.arrow)
     testImplementation(Depends.Libraries.junit)
 }

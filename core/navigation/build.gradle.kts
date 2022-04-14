@@ -69,7 +69,6 @@ dependencies {
     api(Depends.Libraries.navigation_ui_ktx)
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
-    implementation(Depends.Libraries.multidex)
     //other
     implementation(Depends.Libraries.material)
     //ui

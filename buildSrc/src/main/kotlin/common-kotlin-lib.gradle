@@ -1,7 +1,0 @@
-
-// TODO: Convert to kts
-
-dependencies {
-    implementation Depends.Libraries.kotlin
-    implementation Depends.Libraries.kotlin_reflect
-}

@@ -69,15 +69,8 @@ dependencies {
     implementation(Depends.Libraries.android_core_ktx)
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
-    implementation(Depends.Libraries.multidex)
     //network
-    implementation(Depends.Libraries.retrofit)
-    implementation(Depends.Libraries.retrofit_adapter_rx)
-    implementation(Depends.Libraries.logging_interceptor)
-    debugImplementation(Depends.Libraries.chucker)
-    releaseImplementation(Depends.Libraries.chucker_no_op)
     implementation(Depends.Libraries.apollo_graphql_runtime)
-    implementation(Depends.Libraries.arrow)
     //other
     implementation(Depends.Libraries.material)
     //test
@@ -89,6 +82,8 @@ dependencies {
     testImplementation(Depends.Libraries.mockk)
     testImplementation(Depends.Libraries.coroutines_test)
     testImplementation(Depends.Libraries.arch_core_testing)
+
+    implementation(project(Depends.Core.network))
 }
 
 // https://github.com/apollographql/apollo-kotlin/issues/2287#issuecomment-1092785201

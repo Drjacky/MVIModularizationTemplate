@@ -85,16 +85,11 @@ dependencies {
     kapt(Depends.Libraries.hilt_compiler)
     implementation(Depends.Libraries.java_inject)
     //network
-    implementation(Depends.Libraries.retrofit)
-    implementation(Depends.Libraries.retrofit_adapter_rx)
-    implementation(Depends.Libraries.logging_interceptor)
-    debugImplementation(Depends.Libraries.chucker)
-    releaseImplementation(Depends.Libraries.chucker_no_op)
     implementation(Depends.Libraries.apollo_graphql_runtime)
-    implementation(Depends.Libraries.arrow)
     //other
     implementation(Depends.Libraries.timber)
     implementation(Depends.Libraries.material)
+    implementation(Depends.Libraries.arrow)
     debugImplementation(Depends.Libraries.leak_canary)
 
     //test

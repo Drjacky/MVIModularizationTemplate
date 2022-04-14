@@ -68,20 +68,11 @@ dependencies {
     implementation(Depends.Libraries.android_core_ktx)
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
-    implementation(Depends.Libraries.multidex)
     //dependency injection
     implementation(Depends.Libraries.hilt_android)
     kapt(Depends.Libraries.hilt_android_compiler)
     kapt(Depends.Libraries.hilt_compiler)
     implementation(Depends.Libraries.java_inject)
-    //network
-    implementation(Depends.Libraries.retrofit)
-    implementation(Depends.Libraries.retrofit_adapter_rx)
-    implementation(Depends.Libraries.logging_interceptor)
-    debugImplementation(Depends.Libraries.chucker)
-    releaseImplementation(Depends.Libraries.chucker_no_op)
-    implementation(Depends.Libraries.apollo_graphql_runtime)
-    implementation(Depends.Libraries.arrow)
     //other
     implementation(Depends.Libraries.material)
     //ui
@@ -97,4 +88,6 @@ dependencies {
     testImplementation(Depends.Libraries.mockk)
     testImplementation(Depends.Libraries.coroutines_test)
     testImplementation(Depends.Libraries.arch_core_testing)
+
+    implementation(project(Depends.Core.network))
 }
