@@ -16,10 +16,6 @@ android {
         testInstrumentationRunner =
             Depends.Versions.testInstrumentationRunner
     }
-    compileOptions {
-        targetCompatibility = JavaVersion.VERSION_11
-        sourceCompatibility = JavaVersion.VERSION_11
-    }
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_11.toString()
     }
@@ -28,14 +24,6 @@ android {
         viewBinding = true
     }
 
-    sourceSets {
-        val test by getting
-
-        map {
-            it.java.srcDir("src/${it.name}/kotlin")
-            //test.java.srcDir("${project(":domain").projectDir}/src/test/java")
-        }
-    }
     buildTypes {
         named("debug") {
             buildConfigField(

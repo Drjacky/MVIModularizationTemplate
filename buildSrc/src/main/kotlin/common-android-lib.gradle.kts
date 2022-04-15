@@ -2,9 +2,9 @@ import app.web.drjackycv.buildsrc.Depends
 
 plugins {
     id("com.android.library")
-    id("kotlin-android")
+    kotlin("android")
     id("kotlin-parcelize")
-    id("kotlin-kapt")
+    kotlin("kapt")
 }
 
 android {
