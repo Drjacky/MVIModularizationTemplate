@@ -1,4 +1,4 @@
-package app.web.drjackycv.core.views
+package app.web.drjackycv.core.designsystem
 
 import org.junit.Test
 

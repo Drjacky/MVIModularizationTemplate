@@ -11,7 +11,7 @@ object Depends {
     }
 
     object Core {
-        val designSystem = ":core:design"
+        val designSystem = ":core:designSystem"
         val network = ":core:network"
         val navigation = ":core:navigation"
     }

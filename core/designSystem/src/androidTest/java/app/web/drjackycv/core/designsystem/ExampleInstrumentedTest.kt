@@ -1,4 +1,4 @@
-package app.web.drjackycv.core.views
+package app.web.drjackycv.core.designsystem
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("app.web.drjackycv.core.views.test", appContext.packageName)
+        assertEquals("app.web.drjackycv.core.designsystem.test", appContext.packageName)
     }
 }

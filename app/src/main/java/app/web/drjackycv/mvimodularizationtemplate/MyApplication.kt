@@ -6,7 +6,6 @@ import android.os.StrictMode.VmPolicy
 import androidx.multidex.MultiDexApplication
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
-import javax.inject.Inject
 
 
 @HiltAndroidApp

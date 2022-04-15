@@ -1,4 +1,4 @@
-package app.web.drjackycv.di
+package app.web.drjackycv.mvimodularizationtemplate.di
 
 import app.web.drjackycv.core.network.BaseHttpClient
 import app.web.drjackycv.core.network.BuildConfig
