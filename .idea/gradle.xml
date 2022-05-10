@@ -24,7 +24,6 @@
             <option value="$PROJECT_DIR$/features/splash" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
