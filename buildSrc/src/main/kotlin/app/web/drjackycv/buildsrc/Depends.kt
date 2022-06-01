@@ -51,7 +51,7 @@ object Depends {
         const val hiltNavigationComposeVersion = "1.0.0-alpha03"
         const val javaxInjectVersion = "1"
         const val timberVersion = "5.0.1"
-        const val lottieVersion = "5.0.3"
+        const val lottieVersion = "5.2.0"
         const val glideVersion = "4.13.1"
         const val autoDispose = "2.1.1"
         const val dataStorePreferenceVersion = "1.0.0"
