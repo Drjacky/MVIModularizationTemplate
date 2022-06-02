@@ -2,7 +2,10 @@ package app.web.drjackycv.features.splash.presentation
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import app.web.drjackycv.core.designsystem.setOnReactiveClickListener
 import app.web.drjackycv.core.designsystem.viewBinding
 import app.web.drjackycv.features.splash.R
@@ -19,8 +22,10 @@ class Splash : Fragment(R.layout.splash) {
 
     private fun setupListeners() {
         binding.btnStart.setOnReactiveClickListener {
-            //val action = SplashDirections
-            //findNavController().navigate()
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("android-app://app.web.drjackycv/characters".toUri())
+                .build()
+            findNavController().navigate(request)
         }
     }
 

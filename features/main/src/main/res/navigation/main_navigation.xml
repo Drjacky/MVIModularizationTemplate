@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_navigation"
+    android:id="@+id/main_navigation_id"
     app:startDestination="@id/splash">
 
     <fragment
@@ -10,16 +10,14 @@
         android:name="app.web.drjackycv.features.splash.presentation.Splash"
         tools:layout="@layout/splash">
 
-        <action
-            android:id="@+id/navigateToCharacters"
-            app:destination="@id/characters" />
-
     </fragment>
 
     <fragment
         android:id="@+id/characters"
         android:name="app.web.drjackycv.features.characters.presentation.Characters"
         tools:layout="@layout/characters">
+
+        <deepLink app:uri="android-app://app.web.drjackycv/characters" />
 
     </fragment>
 

@@ -2,7 +2,6 @@ import app.web.drjackycv.buildsrc.Depends
 
 plugins {
     id("common-android-lib")
-    id("androidx.navigation.safeargs.kotlin") //TODO
     id("dagger.hilt.android.plugin")
     id("org.jetbrains.kotlin.android")
 }

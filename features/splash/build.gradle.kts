@@ -2,7 +2,6 @@ import app.web.drjackycv.buildsrc.Depends
 
 plugins {
     id("common-android-lib")
-    id("androidx.navigation.safeargs.kotlin") //TODO
     id("dagger.hilt.android.plugin")
 }
 
@@ -46,6 +45,7 @@ dependencies {
     implementation(Depends.Libraries.android_core_ktx)
     implementation(Depends.Libraries.fragment_ktx)
     implementation(Depends.Libraries.navigation_fragment_ktx)
+    implementation(Depends.Libraries.navigation_ui_ktx)
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
     //dependency injection
