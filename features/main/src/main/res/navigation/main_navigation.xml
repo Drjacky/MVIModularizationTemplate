@@ -7,8 +7,20 @@
 
     <fragment
         android:id="@+id/splash"
-        android:name="app.web.drjackycv.splash.presentation.Splash"
+        android:name="app.web.drjackycv.features.splash.presentation.Splash"
         tools:layout="@layout/splash">
+
+        <action
+            android:id="@+id/navigateToCharacters"
+            app:destination="@id/characters" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/characters"
+        android:name="app.web.drjackycv.features.characters.presentation.Characters"
+        tools:layout="@layout/characters">
+
     </fragment>
 
 </navigation>
