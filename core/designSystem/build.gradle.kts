@@ -26,20 +26,9 @@ android {
     }
 
     buildTypes {
-        named("debug") {
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"" + Depends.Environments.debugBaseUrl + "\""
-            )
-        }
+        named("debug") { }
         named("release") {
             isMinifyEnabled = true
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"" + Depends.Environments.releaseBaseUrl + "\""
-            )
             setProguardFiles(
                 listOf(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -63,6 +52,9 @@ dependencies {
     implementation(Depends.Libraries.java_inject)
     //other
     implementation(Depends.Libraries.material)
+    //reactive
+    implementation(Depends.Libraries.rx_java_android)
+    implementation(Depends.Libraries.rx_binding3)
     //ui
     implementation(Depends.Libraries.appcompat)
     implementation(Depends.Libraries.lifecycle_common)
@@ -71,13 +63,16 @@ dependencies {
     implementation(Depends.Libraries.lottie)
     //test
     testImplementation(Depends.Libraries.junit)
-    testImplementation(Depends.Libraries.test_ext_junit)
     testImplementation(Depends.Libraries.mockito_core)
     testImplementation(Depends.Libraries.mockito_inline)
     testImplementation(Depends.Libraries.mockito_kotlin)
     testImplementation(Depends.Libraries.mockk)
     testImplementation(Depends.Libraries.coroutines_test)
     testImplementation(Depends.Libraries.arch_core_testing)
+    androidTestImplementation(Depends.Libraries.test_ext_junit)
+    androidTestImplementation(Depends.Libraries.test_runner)
+    androidTestImplementation(Depends.Libraries.espresso_core)
 
     implementation(project(Depends.Core.network))
+    implementation(project(Depends.Common.models))
 }

@@ -94,7 +94,7 @@ dependencies {
 
     //test
     testImplementation(Depends.Libraries.junit)
-    testImplementation(Depends.Libraries.test_ext_junit)
+    androidTestImplementation(Depends.Libraries.test_ext_junit)
     androidTestImplementation(Depends.Libraries.test_runner)
     androidTestImplementation(Depends.Libraries.espresso_core)
 

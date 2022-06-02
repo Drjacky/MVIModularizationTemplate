@@ -2,6 +2,7 @@ import app.web.drjackycv.buildsrc.Depends
 
 plugins {
     id("common-android-lib")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -65,11 +66,13 @@ dependencies {
     implementation(Depends.Libraries.lottie)
     //test
     testImplementation(Depends.Libraries.junit)
-    testImplementation(Depends.Libraries.test_ext_junit)
     testImplementation(Depends.Libraries.mockito_core)
     testImplementation(Depends.Libraries.mockito_inline)
     testImplementation(Depends.Libraries.mockito_kotlin)
     testImplementation(Depends.Libraries.mockk)
     testImplementation(Depends.Libraries.coroutines_test)
     testImplementation(Depends.Libraries.arch_core_testing)
+    androidTestImplementation(Depends.Libraries.test_ext_junit)
+    androidTestImplementation(Depends.Libraries.test_runner)
+    androidTestImplementation(Depends.Libraries.espresso_core)
 }
