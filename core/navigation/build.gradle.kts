@@ -26,20 +26,9 @@ android {
     }
 
     buildTypes {
-        named("debug") {
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"" + Depends.Environments.debugBaseUrl + "\""
-            )
-        }
+        named("debug") { }
         named("release") {
             isMinifyEnabled = true
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"" + Depends.Environments.releaseBaseUrl + "\""
-            )
             setProguardFiles(
                 listOf(
                     getDefaultProguardFile("proguard-android-optimize.txt"),

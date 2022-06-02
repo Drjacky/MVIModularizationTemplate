@@ -2,6 +2,7 @@ import app.web.drjackycv.buildsrc.Depends
 
 plugins {
     id("common-android-lib")
+    id("androidx.navigation.safeargs.kotlin") //TODO
     id("dagger.hilt.android.plugin")
 }
 
@@ -26,20 +27,9 @@ android {
     }
 
     buildTypes {
-        named("debug") {
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"" + Depends.Environments.debugBaseUrl + "\""
-            )
-        }
+        named("debug") { }
         named("release") {
             isMinifyEnabled = true
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"" + Depends.Environments.releaseBaseUrl + "\""
-            )
             setProguardFiles(
                 listOf(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
