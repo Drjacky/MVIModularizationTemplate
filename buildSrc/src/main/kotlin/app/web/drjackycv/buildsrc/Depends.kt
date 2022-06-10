@@ -18,6 +18,7 @@ object Depends {
 
     object Common {
         val models = ":common:models"
+        val exceptions = ":common:exceptions"
         val utils = ":utils"
     }
 

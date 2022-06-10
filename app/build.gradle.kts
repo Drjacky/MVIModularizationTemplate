@@ -76,8 +76,6 @@ dependencies {
     implementation(Depends.Libraries.android_core_ktx)
     implementation(Depends.Libraries.multidex)
     implementation(Depends.Libraries.fragment_ktx)
-    api(Depends.Libraries.navigation_fragment_ktx)
-    api(Depends.Libraries.navigation_ui_ktx)
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
     implementation(Depends.Libraries.dataStore_preferences)
