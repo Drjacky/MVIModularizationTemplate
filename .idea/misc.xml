@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="features/characters/src/main/res/layout/character.xml" value="0.196875" />
+        <entry key="core/designSystem/src/main/res/drawable/ic_retry.xml" value="0.146" />
+        <entry key="features/characters/src/main/res/drawable/ic_no_image.xml" value="0.146" />
+        <entry key="features/characters/src/main/res/layout/character.xml" value="0.25" />
         <entry key="features/characters/src/main/res/layout/characters.xml" value="0.196875" />
+        <entry key="features/characters/src/main/res/layout/error.xml" value="0.196875" />
+        <entry key="features/characters/src/main/res/layout/loading.xml" value="0.196875" />
+        <entry key="features/characters/src/main/res/layout/loading_row.xml" value="0.196875" />
         <entry key="features/main/src/main/res/layout/main.xml" value="0.20052083333333334" />
         <entry key="features/splash/src/main/res/drawable/rickandmorty.xml" value="0.14" />
         <entry key="features/splash/src/main/res/layout/splash.xml" value="0.20052083333333334" />
