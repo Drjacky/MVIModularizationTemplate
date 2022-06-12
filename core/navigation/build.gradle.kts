@@ -47,12 +47,6 @@ dependencies {
     api(Depends.Libraries.navigation_ui_ktx)
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
-    //other
-    implementation(Depends.Libraries.material)
-    //ui
-    implementation(Depends.Libraries.glide)
-    kapt(Depends.Libraries.glide_compiler)
-    implementation(Depends.Libraries.lottie)
     //test
     testImplementation(Depends.Libraries.junit)
     testImplementation(Depends.Libraries.mockito_core)

@@ -55,8 +55,6 @@ dependencies {
     implementation(Depends.Libraries.paging_rx)
     //network
     implementation(Depends.Libraries.apollo_graphql_runtime)
-    //other
-    implementation(Depends.Libraries.material)
     //test
     testImplementation(Depends.Libraries.junit)
     testImplementation(Depends.Libraries.mockito_core)

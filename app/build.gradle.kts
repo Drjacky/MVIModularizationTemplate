@@ -88,7 +88,6 @@ dependencies {
     implementation(Depends.Libraries.apollo_graphql_runtime)
     //other
     implementation(Depends.Libraries.timber)
-    implementation(Depends.Libraries.material)
     implementation(Depends.Libraries.arrow)
     debugImplementation(Depends.Libraries.leak_canary)
 

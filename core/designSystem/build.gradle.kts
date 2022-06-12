@@ -50,17 +50,16 @@ dependencies {
     kapt(Depends.Libraries.hilt_android_compiler)
     kapt(Depends.Libraries.hilt_compiler)
     implementation(Depends.Libraries.java_inject)
-    //other
-    implementation(Depends.Libraries.material)
     //reactive
     implementation(Depends.Libraries.rx_java_android)
     implementation(Depends.Libraries.rx_binding3)
     //ui
     implementation(Depends.Libraries.appcompat)
+    implementation(Depends.Libraries.material)
     implementation(Depends.Libraries.lifecycle_common)
     implementation(Depends.Libraries.glide)
     kapt(Depends.Libraries.glide_compiler)
-    implementation(Depends.Libraries.lottie)
+    api(Depends.Libraries.lottie)
     //test
     testImplementation(Depends.Libraries.junit)
     testImplementation(Depends.Libraries.mockito_core)
