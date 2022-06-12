@@ -34,7 +34,7 @@ fun View.invisible() {
 
 fun ImageView.load(
     url: String?,
-    @DrawableRes placeholderRes: Int,/* = R.drawable.ic_cloud_download*/
+    @DrawableRes placeholderRes: Int,
     activity: Activity? = null,
 ) {
     val safePlaceholderDrawable = AppCompatResources.getDrawable(context, placeholderRes)

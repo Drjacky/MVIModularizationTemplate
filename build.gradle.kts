@@ -33,6 +33,6 @@ configure<com.osacky.doctor.DoctorExtension> {
     javaHome {
         ensureJavaHomeIsSet.set(true)
         ensureJavaHomeMatches.set(true)
-        failOnError.set(true)
+        failOnError.set(false)
     }
 }

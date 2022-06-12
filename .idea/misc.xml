@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="features/characters/src/main/res/layout/character.xml" value="0.196875" />
         <entry key="features/characters/src/main/res/layout/characters.xml" value="0.196875" />
         <entry key="features/main/src/main/res/layout/main.xml" value="0.20052083333333334" />
         <entry key="features/splash/src/main/res/drawable/rickandmorty.xml" value="0.14" />

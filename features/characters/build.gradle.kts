@@ -71,4 +71,5 @@ dependencies {
 
     implementation(project(app.web.drjackycv.buildsrc.Depends.Core.navigation))
     implementation(project(app.web.drjackycv.buildsrc.Depends.Core.designSystem))
+    implementation(project(app.web.drjackycv.buildsrc.Depends.Common.models))
 }
