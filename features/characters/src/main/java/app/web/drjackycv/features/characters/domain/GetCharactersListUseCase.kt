@@ -7,12 +7,9 @@ import javax.inject.Inject
 
 class GetCharactersListUseCase @Inject constructor(
     private val charactersListRepository: CharactersListRepository,
-) : GeneralUseCase<Flow<PagingData<CharacterDetail>>, GetCharactersListParams> {
+) : GeneralUseCase<Flow<PagingData<CharacterDetail>>, Unit> {
 
-    override fun invoke(params: GetCharactersListParams): Flow<PagingData<CharacterDetail>> =
-        charactersListRepository.getCharactersList(params.ids)
+    override fun invoke(params: Unit): Flow<PagingData<CharacterDetail>> =
+        charactersListRepository.getCharactersList()
 
 }
-
-@JvmInline
-value class GetCharactersListParams(val ids: String)

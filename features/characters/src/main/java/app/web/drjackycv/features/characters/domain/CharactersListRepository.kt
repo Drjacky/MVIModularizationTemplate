@@ -6,6 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface CharactersListRepository {
 
-    fun getCharactersList(ids: String): Flow<PagingData<CharacterDetail>>
+    fun getCharactersList(): Flow<PagingData<CharacterDetail>>
 
 }

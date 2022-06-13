@@ -15,7 +15,7 @@ class CharactersListRepositoryImpl @Inject constructor(
     private val charactersPagingSource: CharactersPagingSource
 ) : CharactersListRepository {
 
-    override fun getCharactersList(ids: String): Flow<PagingData<CharacterDetail>> =
+    override fun getCharactersList(): Flow<PagingData<CharacterDetail>> =
         allowReads {
             Pager(
                 config = PagingConfig(

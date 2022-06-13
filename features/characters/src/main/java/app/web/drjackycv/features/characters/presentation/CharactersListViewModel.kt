@@ -9,7 +9,6 @@ import androidx.paging.cachedIn
 import app.web.drjackycv.common.exceptions.Failure
 import app.web.drjackycv.common.models.fragment.CharacterDetail
 import app.web.drjackycv.features.characters.R
-import app.web.drjackycv.features.characters.domain.GetCharactersListParams
 import app.web.drjackycv.features.characters.domain.GetCharactersListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -37,12 +36,12 @@ class CharactersListViewModel @Inject constructor(
 
 
     init {
-        getCharacters("")
+        getCharacters()
     }
 
-    private fun getCharacters(ids: String) {
+    private fun getCharacters() {
         viewModelScope.launch {
-            _charactersList.value = getCharactersListUseCase(GetCharactersListParams(ids = ids))
+            _charactersList.value = getCharactersListUseCase(Unit)
                 .cachedIn(viewModelScope).first()
         }
     }
