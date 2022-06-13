@@ -12,7 +12,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-
 @AndroidEntryPoint
 class Main : AppCompatActivity() {
 

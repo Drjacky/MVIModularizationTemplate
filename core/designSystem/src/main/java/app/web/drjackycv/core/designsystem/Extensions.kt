@@ -1,11 +1,16 @@
 package app.web.drjackycv.core.designsystem
 
+import android.os.StrictMode
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
 import androidx.viewbinding.ViewBinding
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
+import kotlin.coroutines.EmptyCoroutineContext
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 
@@ -86,3 +91,34 @@ inline fun <T : ViewBinding> AppCompatActivity.viewInflateBinding(
     lazy(LazyThreadSafetyMode.NONE) {
         bindingInflater.invoke(layoutInflater)
     }
+
+fun <T> allowReads(block: () -> T): T {
+    val oldPolicy = StrictMode.allowThreadDiskReads()
+    try {
+        return block()
+    } finally {
+        StrictMode.setThreadPolicy(oldPolicy)
+    }
+}
+
+fun <T> allowWrites(block: () -> T): T {
+    val oldPolicy = StrictMode.allowThreadDiskWrites()
+    try {
+        return block()
+    } finally {
+        StrictMode.setThreadPolicy(oldPolicy)
+    }
+}
+
+inline fun <T> Flow<T>.collectIn(
+    owner: LifecycleOwner,
+    minActiveState: Lifecycle.State = Lifecycle.State.STARTED,
+    coroutineContext: CoroutineContext = EmptyCoroutineContext,
+    crossinline action: suspend (T) -> Unit,
+) = owner.lifecycleScope.launch(coroutineContext) {
+    owner.lifecycle.repeatOnLifecycle(minActiveState) {
+        collect {
+            action(it)
+        }
+    }
+}

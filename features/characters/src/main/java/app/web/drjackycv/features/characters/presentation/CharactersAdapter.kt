@@ -4,15 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
-import app.web.drjackycv.common.models.Character
+import app.web.drjackycv.common.models.fragment.CharacterDetail
 import app.web.drjackycv.core.designsystem.load
 import app.web.drjackycv.core.designsystem.setOnReactiveClickListener
 import app.web.drjackycv.features.characters.R
 import app.web.drjackycv.features.characters.databinding.CharacterBinding
 
 class CharactersAdapter(
-    private val onItemClick: (Character) -> Unit
-) : PagingDataAdapter<Character, CharactersAdapter.CharactersViewHolder>(CHARACTER_DIFF_CALLBACK) {
+    private val onItemClick: (CharacterDetail) -> Unit
+) : PagingDataAdapter<CharacterDetail, CharactersAdapter.CharactersViewHolder>(
+    CHARACTER_DIFF_CALLBACK
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharactersViewHolder {
         val binding = CharacterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -30,7 +32,7 @@ class CharactersAdapter(
     class CharactersViewHolder(private val binding: CharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(character: Character, onItemClick: (Character) -> Unit) {
+        fun bind(character: CharacterDetail, onItemClick: (CharacterDetail) -> Unit) {
             binding.tvCharacterId.text = character.id
             binding.imgCharacter.load(
                 url = character.image,

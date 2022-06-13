@@ -54,9 +54,8 @@ object Depends {
         const val timberVersion = "5.0.1"
         const val lottieVersion = "5.2.0"
         const val glideVersion = "4.13.1"
-        const val autoDispose = "2.1.1"
         const val dataStorePreferenceVersion = "1.0.0"
-        const val apolloGraphqlVersion = "3.2.1"
+        const val apolloGraphqlVersion = "3.3.0"
         const val arrowVersion = "1.0.1"
 
         const val mockitoKotlinVersion = "2.2.0"
@@ -161,11 +160,6 @@ object Depends {
         const val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
         const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
         const val lottie = "com.airbnb.android:lottie:${Versions.lottieVersion}"
-        const val autodispose = "com.uber.autodispose2:autodispose:${Versions.autoDispose}"
-        const val autodispose_android =
-            "com.uber.autodispose2:autodispose-android:${Versions.autoDispose}"
-        const val autodispose_android_arch =
-            "com.uber.autodispose2:autodispose-androidx-lifecycle:${Versions.autoDispose}"
         const val leak_canary =
             "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanaryVersion}"
         const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chuckerVersion}"
@@ -175,6 +169,8 @@ object Depends {
             "androidx.datastore:datastore-preferences:${Versions.dataStorePreferenceVersion}"
         const val apollo_graphql_runtime =
             "com.apollographql.apollo3:apollo-runtime:${Versions.apolloGraphqlVersion}"
+        const val apollo_normalized_cache =
+            "com.apollographql.apollo3:apollo-normalized-cache:${Versions.apolloGraphqlVersion}"
         const val arrow = "io.arrow-kt:arrow-core:${Versions.arrowVersion}"
     }
 

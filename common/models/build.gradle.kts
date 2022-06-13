@@ -43,7 +43,7 @@ apollo {
     packageName.set("app.web.drjackycv.common.models")
     introspection {
         endpointUrl.set(Depends.Environments.debugBaseUrl)
-        schemaFile.set(file("src/main/graphql/app/web/drjackycv/schema.json"))
+        //schemaFile.set(file("src/main/graphql/app/web/drjackycv/schema.json"))
     }
     generateKotlinModels.set(true)
 }

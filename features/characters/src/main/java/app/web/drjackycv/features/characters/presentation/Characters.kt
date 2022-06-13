@@ -5,6 +5,7 @@ import android.view.View
 import androidx.core.net.toUri
 import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
@@ -13,18 +14,18 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import androidx.recyclerview.widget.RecyclerView
 import app.web.drjackycv.common.exceptions.Failure
-import app.web.drjackycv.common.models.Character
-import app.web.drjackycv.core.designsystem.gone
-import app.web.drjackycv.core.designsystem.invisible
-import app.web.drjackycv.core.designsystem.viewBinding
-import app.web.drjackycv.core.designsystem.visible
+import app.web.drjackycv.common.models.fragment.CharacterDetail
+import app.web.drjackycv.core.designsystem.*
 import app.web.drjackycv.features.characters.R
 import app.web.drjackycv.features.characters.databinding.CharactersBinding
 import com.google.android.material.transition.platform.Hold
 import com.google.android.material.transition.platform.MaterialElevationScale
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Characters : Fragment(R.layout.characters) {
 
+    private val charactersListViewModel: CharactersListViewModel by viewModels()
     private val binding by viewBinding(CharactersBinding::bind) {
         cleanUp(it)
     }
@@ -40,7 +41,7 @@ class Characters : Fragment(R.layout.characters) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupRecyclerView()
+        setupUI()
     }
 
     private fun setupRecyclerView() {
@@ -50,13 +51,15 @@ class Characters : Fragment(R.layout.characters) {
         charactersAdapter.addLoadStateListener { adapterLoadingErrorHandling(it) }
         charactersAdapter.stateRestorationPolicy =
             RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
-        //productListRecyclerView.itemAnimator = null
+        //binding.rvCharactersList.itemAnimator = null
         postponeEnterTransition()
         view?.doOnPreDraw { startPostponedEnterTransition() }
     }
 
     private fun setupUI() {
-        /*charactersListViewModel.run {
+        setupRecyclerView()
+
+        charactersListViewModel.run {
             charactersList.collectIn(viewLifecycleOwner) {
                 addCharactersList(it)
             }
@@ -64,10 +67,10 @@ class Characters : Fragment(R.layout.characters) {
             failure.collectIn(viewLifecycleOwner) {
                 handleFailure(it)
             }
-        }*/
+        }
     }
 
-    private fun addCharactersList(charactersList: PagingData<Character>) {
+    private fun addCharactersList(charactersList: PagingData<CharacterDetail>) {
         binding.rvCharactersList.visible()
         charactersAdapter.submitData(lifecycle, charactersList)
     }
@@ -98,7 +101,7 @@ class Characters : Fragment(R.layout.characters) {
         }
     }
 
-    private fun navigateToCharacterDetail(character: Character, view: View) {
+    private fun navigateToCharacterDetail(character: CharacterDetail, view: View) {
         val extras = FragmentNavigatorExtras(
             view to character.id
         )

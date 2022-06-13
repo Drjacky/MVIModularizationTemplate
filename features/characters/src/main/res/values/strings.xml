@@ -1,4 +1,5 @@
 <resources>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_no_internet">No Internet Connection</string>
+    <string name="error_timeout">Oops! Slow Connection</string>
+    <string name="error_unknown">Unknown Error! That’s all we know</string>
 </resources>

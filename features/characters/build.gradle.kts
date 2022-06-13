@@ -65,6 +65,7 @@ dependencies {
 
     implementation(project(Depends.Core.navigation))
     implementation(project(Depends.Core.designSystem))
+    implementation(project(Depends.Core.network))
     implementation(project(Depends.Common.models))
     implementation(project(Depends.Common.exceptions))
 }

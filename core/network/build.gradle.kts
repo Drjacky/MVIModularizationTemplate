@@ -66,7 +66,7 @@ dependencies {
     implementation(Depends.Libraries.logging_interceptor)
     debugImplementation(Depends.Libraries.chucker)
     releaseImplementation(Depends.Libraries.chucker_no_op)
-    implementation(Depends.Libraries.apollo_graphql_runtime)
+    api(Depends.Libraries.apollo_graphql_runtime)
     //test
     testImplementation(Depends.Libraries.junit)
     testImplementation(Depends.Libraries.mockito_core)

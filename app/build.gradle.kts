@@ -86,6 +86,9 @@ dependencies {
     implementation(Depends.Libraries.java_inject)
     //network
     implementation(Depends.Libraries.apollo_graphql_runtime)
+    implementation(Depends.Libraries.apollo_normalized_cache)
+    debugImplementation(Depends.Libraries.chucker)
+    releaseImplementation(Depends.Libraries.chucker_no_op)
     //other
     implementation(Depends.Libraries.timber)
     implementation(Depends.Libraries.arrow)
@@ -97,9 +100,12 @@ dependencies {
     androidTestImplementation(Depends.Libraries.test_runner)
     androidTestImplementation(Depends.Libraries.espresso_core)
 
-    implementation(project(Depends.Common.models))
     implementation(project(Depends.Core.network))
+    implementation(project(Depends.Core.designSystem))
     implementation(project(Depends.Core.navigation))
+    implementation(project(Depends.Common.models))
+    implementation(project(Depends.Common.exceptions))
     implementation(project(Depends.Features.splash))
     implementation(project(Depends.Features.main))
+    implementation(project(Depends.Features.characters))
 }
