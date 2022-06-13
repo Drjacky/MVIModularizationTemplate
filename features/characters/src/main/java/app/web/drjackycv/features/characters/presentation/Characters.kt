@@ -132,7 +132,7 @@ class Characters : Fragment(R.layout.characters) {
                 else -> null
             }
             error?.run {
-                //charactersListViewModel.handleFailure(this.error) { retryFetchData() }
+                charactersListViewModel.handleFailure(this.error) { retryFetchData() }
             }
         }
     }
