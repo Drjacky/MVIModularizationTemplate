@@ -66,7 +66,7 @@ Available workflows listed as follows:
 
 ## References 🧷
 
-- [The Punk API](https://rickandmortyapi.com/)
+- [The Rick and Morty API](https://rickandmortyapi.com/)
 
 ## Contributing 🤝
 
