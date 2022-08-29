@@ -29,7 +29,7 @@ object Depends {
         const val targetSdkVersion = 31
         const val minSdkVersion = 21
         const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        const val kotlinVersion = "1.6.20"
+        const val kotlinVersion = "1.7.10"
         const val rxKotlinVersion = "3.0.1"
         const val rxAndroidVersion = "3.0.0"
         const val rxJavaVersion = "3.1.4"
@@ -69,7 +69,7 @@ object Depends {
         const val sonarqubeVersion = "3.3"
         const val detektVersion = "1.19.0"
         const val checkDependencyVersionsVersion = "0.42.0"
-        const val gradleDoctorVersion = "0.8.0"
+        const val gradleDoctorVersion = "0.8.1"
         const val dependencyAnalysisVersion = "1.0.0"
         const val leakCanaryVersion = "2.8.1"
         const val coroutinesTestVersion = "1.6.0"

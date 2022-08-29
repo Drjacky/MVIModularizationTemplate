@@ -71,6 +71,7 @@ class Characters : Fragment(R.layout.characters) {
     }
 
     private fun addCharactersList(charactersList: PagingData<CharacterDetail>) {
+        loadingUI(false)
         binding.rvCharactersList.visible()
         charactersAdapter.submitData(lifecycle, charactersList)
     }
@@ -138,6 +139,7 @@ class Characters : Fragment(R.layout.characters) {
     }
 
     private fun retryFetchData() {
+        loadingUI(false)
         binding.rvCharactersList.visible()
         charactersAdapter.retry()
     }
