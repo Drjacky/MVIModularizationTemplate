@@ -41,7 +41,7 @@ class CharactersListViewModel @Inject constructor(
 
     private fun getCharacters() {
         viewModelScope.launch {
-            _charactersList.value = getCharactersListUseCase(Unit)
+            _charactersList.value = getCharactersListUseCase()
                 .cachedIn(viewModelScope).first()
         }
     }
