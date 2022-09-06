@@ -24,7 +24,7 @@ object Depends {
 
     object Versions {
         const val appVersionCode = 1_000_000
-        const val gradleVersion = "7.2.0"
+        const val gradleVersion = "7.2.2"
         const val androidCompileSdkVersion = 31
         const val targetSdkVersion = 31
         const val minSdkVersion = 21
@@ -47,9 +47,8 @@ object Depends {
         const val multidexVersion = "2.0.1"
         const val fragmentExtVersion = "1.5.0-alpha05"
         const val recyclerviewVersion = "1.3.0-alpha02"
-        const val hiltVersion = "2.40.1"
+        const val hiltVersion = "2.42"
         const val hiltCompilerVersion = "1.0.0"
-        const val hiltNavigationComposeVersion = "1.0.0-alpha03"
         const val javaxInjectVersion = "1"
         const val timberVersion = "5.0.1"
         const val lottieVersion = "5.2.0"
