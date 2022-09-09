@@ -47,9 +47,20 @@ class Characters : Fragment(R.layout.characters) {
 
     private fun setupRecyclerView() {
         binding.inclItemError.itemErrorContainer.gone()
+        val footerAdapter = LoadingStateAdapter()
         binding.rvCharactersList.adapter =
-            charactersAdapter.withLoadStateFooter(LoadingStateAdapter())
-        binding.rvCharactersList.layoutManager = GridLayoutManager(context, 2)
+            charactersAdapter.withLoadStateFooter(footerAdapter)
+        binding.rvCharactersList.layoutManager = GridLayoutManager(context, 2).also {
+            it.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                override fun getSpanSize(position: Int): Int {
+                    return if (position == charactersAdapter.itemCount && footerAdapter.itemCount > 0) {
+                        2
+                    } else {
+                        1
+                    }
+                }
+            }
+        }
         charactersAdapter.addLoadStateListener { adapterLoadingErrorHandling(it) }
         charactersAdapter.stateRestorationPolicy =
             RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
