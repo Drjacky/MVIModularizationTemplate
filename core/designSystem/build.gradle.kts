@@ -61,6 +61,7 @@ dependencies {
     implementation(Depends.Libraries.glide)
     kapt(Depends.Libraries.glide_compiler)
     api(Depends.Libraries.lottie)
+    api(Depends.Libraries.palette)
     //test
     testImplementation(Depends.Libraries.junit)
     testImplementation(Depends.Libraries.mockito_core)

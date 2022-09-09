@@ -52,6 +52,7 @@ object Depends {
         const val javaxInjectVersion = "1"
         const val timberVersion = "5.0.1"
         const val lottieVersion = "5.2.0"
+        const val paletteVersion = "1.0.0"
         const val glideVersion = "4.13.1"
         const val dataStorePreferenceVersion = "1.0.0"
         const val apolloGraphqlVersion = "3.3.0"
@@ -159,6 +160,7 @@ object Depends {
         const val glide = "com.github.bumptech.glide:glide:${Versions.glideVersion}"
         const val glide_compiler = "com.github.bumptech.glide:compiler:${Versions.glideVersion}"
         const val lottie = "com.airbnb.android:lottie:${Versions.lottieVersion}"
+        const val palette = "androidx.palette:palette:${Versions.paletteVersion}"
         const val leak_canary =
             "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanaryVersion}"
         const val chucker = "com.github.chuckerteam.chucker:library:${Versions.chuckerVersion}"

@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import androidx.paging.PagingData
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.web.drjackycv.common.exceptions.Failure
 import app.web.drjackycv.common.models.fragment.CharacterDetail
@@ -48,6 +49,7 @@ class Characters : Fragment(R.layout.characters) {
         binding.inclItemError.itemErrorContainer.gone()
         binding.rvCharactersList.adapter =
             charactersAdapter.withLoadStateFooter(LoadingStateAdapter())
+        binding.rvCharactersList.layoutManager = GridLayoutManager(context, 2)
         charactersAdapter.addLoadStateListener { adapterLoadingErrorHandling(it) }
         charactersAdapter.stateRestorationPolicy =
             RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
