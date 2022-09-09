@@ -44,6 +44,11 @@ button to create a new repo starting from this template.
 - [Chucker](https://github.com/ChuckerTeam/chucker) - An HTTP inspector for Android & OkHTTP
 - [StrictMode](https://developer.android.com/reference/android/os/StrictMode) - A developer tool
   which detects things you might be doing by accident
+- [Dependency Analysis](https://github.com/autonomousapps/dependency-analysis-android-gradle-plugin)
+  - Dependency analysis android gradle plugin
+- [Sonatype Scan Gradle Plugin](https://github.com/sonatype-nexus-community/scan-gradle-plugin)
+  Gradle plugin that scans the dependencies of a Gradle project using Sonatype platforms: OSS Index
+  and Nexus IQ Server.
 
 ## Under Development 🚧
 
@@ -67,6 +72,8 @@ Available workflows listed as follows:
 - Detekt: `detektAll` - Run the static Kotlin code analysis for the whole project at once.
 - The Dependency Analysis: `buildHealth` - Provides advice for managing dependencies and other
   applied plugins
+- Sonatype Scan Gradle Plugin - AKA Sherlock Trunks: `ossIndexAudit` - Scans the dependencies of a
+  Gradle project using Sonatype platforms; OSS Index and Nexus IQ Server.
 
 ## References 🧷
 
