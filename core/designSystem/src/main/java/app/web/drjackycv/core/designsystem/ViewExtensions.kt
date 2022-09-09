@@ -67,7 +67,7 @@ fun ImageView.load(
                 action(resource)
                 return false
             }
-        }).submit()
+        })
 
     glideRequest.into(this)
 }
