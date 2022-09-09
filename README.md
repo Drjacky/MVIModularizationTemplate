@@ -45,6 +45,10 @@ button to create a new repo starting from this template.
 - [StrictMode](https://developer.android.com/reference/android/os/StrictMode) - A developer tool
   which detects things you might be doing by accident
 
+## Under Development 🚧
+
+- Add detail screen
+
 ## CI 🏭
 
 This template is using [**GitHub
@@ -73,7 +77,8 @@ Available workflows listed as follows:
 Feel free to open an issue or submit a pull request for any bugs/improvements.
 
 ## Result 📺
-<img src="https://raw.githubusercontent.com/Drjacky/MVVMTemplate/master/gif/demo.gif" width="350px" height="700px" />
+
+<img src="https://raw.githubusercontent.com/Drjacky/MVIModularizationTemplate/master/gif/demo.gif" width="350px" height="700px" />
 
 ## License ⚖️
 
