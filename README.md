@@ -85,7 +85,7 @@ Feel free to open an issue or submit a pull request for any bugs/improvements.
 
 ## Result 📺
 
-<img src="https://raw.githubusercontent.com/Drjacky/MVIModularizationTemplate/master/gif/demo2.gif" width="350px" height="700px" />
+<img src="https://raw.githubusercontent.com/Drjacky/MVIModularizationTemplate/master/gif/demo.gif" width="350px" height="700px" />
 
 ## License ⚖️
 
