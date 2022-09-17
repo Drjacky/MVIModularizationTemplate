@@ -59,8 +59,8 @@ button to create a new repo starting from this template.
 
 ## CI 🏭
 
-This template is using [**GitHub
-Actions**](https://github.com/Drjacky/MVIModularizationTemplate/actions) as CI.
+This template is
+using [GitHub Actions](https://github.com/Drjacky/MVIModularizationTemplate/actions) as CI.
 
 Available workflows listed as follows:
 
