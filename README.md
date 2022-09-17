@@ -17,6 +17,8 @@ button to create a new repo starting from this template.
 - 100% Kotlin-only template
 - Following MVI Architectural Design Pattern
 - Template Project
+- [GraphQL](https://graphql.org/) - Gives clients the power to ask for exactly what they need from
+  API
 - [Coroutines](https://developer.android.com/kotlin/coroutines) - A concurrency design pattern
   library
 - [Flow](https://developer.android.com/kotlin/flow) - Built on top of coroutines and is stream of
