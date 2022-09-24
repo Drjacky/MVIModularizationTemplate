@@ -11,7 +11,6 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
-import androidx.paging.PagingData
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.web.drjackycv.common.exceptions.Failure
@@ -83,10 +82,18 @@ class Characters : Fragment(R.layout.characters) {
         }
     }
 
-    private fun addCharactersList(charactersList: PagingData<CharacterDetail>) {
-        loadingUI(false)
-        binding.rvCharactersList.visible()
-        charactersAdapter.submitData(lifecycle, charactersList)
+    private fun addCharactersList(uiState: CharactersUiState) {
+        when (uiState) {
+            is CharactersUiState.Success -> {
+                loadingUI(false)
+                binding.rvCharactersList.visible()
+                charactersAdapter.submitData(lifecycle, uiState.items)
+            }
+            else -> {
+                //no-op: is handled by addLoadStateListener
+            }
+        }
+
     }
 
     private fun loadingUI(isLoading: Boolean) {

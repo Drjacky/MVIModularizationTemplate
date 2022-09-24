@@ -39,7 +39,7 @@ class CharactersPagingSource @Inject constructor(
 
                 toLoadResult(responseCharacters, position)
             } catch (e: Exception) {
-                when (e) {
+                when (e.cause?.cause) {
                     is UnknownHostException, is SocketTimeoutException -> {
                         LoadResult.Error(
                             Failure.NoInternet(e.message)
