@@ -1,5 +1,7 @@
 package app.web.drjackycv.mvimodularizationtemplate.di
 
+import app.web.drjackycv.features.character.domain.CharacterRepository
+import app.web.drjackycv.features.character.domain.GetCharacterUseCase
 import app.web.drjackycv.features.characters.domain.CharactersListRepository
 import app.web.drjackycv.features.characters.domain.GetCharactersListUseCase
 import dagger.Module
@@ -18,5 +20,12 @@ class UseCaseModule {
         charactersListRepository: CharactersListRepository,
     ): GetCharactersListUseCase =
         GetCharactersListUseCase(charactersListRepository::getCharactersList)
+
+    @Provides
+    @ViewModelScoped
+    fun getCharacterUseCase(
+        characterRepository: CharacterRepository,
+    ): GetCharacterUseCase =
+        GetCharacterUseCase(characterRepository::getCharacter)
 
 }

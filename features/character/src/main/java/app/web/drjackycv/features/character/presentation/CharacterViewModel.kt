@@ -1,17 +1,15 @@
-package app.web.drjackycv.features.characters.presentation
+package app.web.drjackycv.features.character.presentation
 
 import android.content.res.Resources
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.paging.PagingData
-import androidx.paging.cachedIn
 import app.web.drjackycv.common.exceptions.Failure
 import app.web.drjackycv.common.models.fragment.CharacterDetail
 import app.web.drjackycv.core.designsystem.R
 import app.web.drjackycv.core.network.entity.Result
 import app.web.drjackycv.core.network.entity.asResult
-import app.web.drjackycv.features.characters.domain.GetCharactersListUseCase
+import app.web.drjackycv.features.character.domain.GetCharacterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
@@ -19,9 +17,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CharactersListViewModel @Inject constructor(
-    private val getCharactersListUseCase: GetCharactersListUseCase,
-    savedStateHandle: SavedStateHandle,
+class CharacterViewModel @Inject constructor(
+    private val getCharacterUseCase: GetCharacterUseCase,
+    private val savedStateHandle: SavedStateHandle,
 ) : ViewModel() {
 
     @Inject
@@ -30,28 +28,28 @@ class CharactersListViewModel @Inject constructor(
     private val _failure: Channel<Failure> = Channel(Channel.BUFFERED)
     val failure: Flow<Failure> = _failure.receiveAsFlow()
 
-    val charactersList: StateFlow<CharactersUiState> =
-        getCharacters()
+    private val characterId = savedStateHandle.get<String>("character")!!
+    val character: StateFlow<CharacterUiState> =
+        getCharacter(characterId)
             .stateIn(
                 scope = viewModelScope,
                 started = SharingStarted.WhileSubscribed(5000),
-                initialValue = CharactersUiState.Loading
+                initialValue = CharacterUiState.Loading
             )
 
-    private fun getCharacters() =
-        getCharactersListUseCase()
-            .cachedIn(viewModelScope)
+    private fun getCharacter(id: String) =
+        getCharacterUseCase(id)
             .asResult()
             .map { result ->
                 when (result) {
                     is Result.Success -> {
-                        CharactersUiState.Success(result.data)
+                        CharacterUiState.Success(result.data)
                     }
                     is Result.Error -> {
-                        CharactersUiState.Error(result.failure)
+                        CharacterUiState.Error(result.failure)
                     }
                     is Result.Loading -> {
-                        CharactersUiState.Loading
+                        CharacterUiState.Loading
                     }
                 }
             }
@@ -83,10 +81,8 @@ class CharactersListViewModel @Inject constructor(
 
 }
 
-sealed interface CharactersUiState {
-    data class Success(val items: PagingData<CharacterDetail> = PagingData.empty()) :
-        CharactersUiState
-
-    data class Error(val error: Failure) : CharactersUiState
-    object Loading : CharactersUiState
+sealed interface CharacterUiState {
+    data class Success(val item: CharacterDetail? = null) : CharacterUiState
+    data class Error(val error: Failure) : CharacterUiState
+    object Loading : CharacterUiState
 }

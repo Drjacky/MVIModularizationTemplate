@@ -3,10 +3,10 @@ import app.web.drjackycv.buildsrc.Depends
 plugins {
     id("common-android-lib")
     id("dagger.hilt.android.plugin")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-
     compileSdk = Depends.Versions.androidCompileSdkVersion
 
     defaultConfig {
@@ -26,20 +26,9 @@ android {
     }
 
     buildTypes {
-        named("debug") {
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"" + Depends.Environments.debugBaseUrl + "\""
-            )
-        }
+        named("debug") { }
         named("release") {
             isMinifyEnabled = true
-            buildConfigField(
-                "String",
-                "BASE_URL",
-                "\"" + Depends.Environments.releaseBaseUrl + "\""
-            )
             setProguardFiles(
                 listOf(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -48,11 +37,13 @@ android {
             )
         }
     }
-
 }
 
 dependencies {
+    implementation(Depends.Libraries.kotlin)
     implementation(Depends.Libraries.android_core_ktx)
+    implementation(Depends.Libraries.fragment_ktx)
+    implementation(Depends.Libraries.navigation_fragment_ktx)
     implementation(Depends.Libraries.paging_runtime_ktx)
     implementation(Depends.Libraries.paging_rx)
     //dependency injection
@@ -60,13 +51,6 @@ dependencies {
     kapt(Depends.Libraries.hilt_android_compiler)
     kapt(Depends.Libraries.hilt_compiler)
     implementation(Depends.Libraries.java_inject)
-    //network
-    implementation(Depends.Libraries.retrofit)
-    implementation(Depends.Libraries.retrofit_adapter_rx)
-    implementation(Depends.Libraries.logging_interceptor)
-    debugImplementation(Depends.Libraries.chucker)
-    releaseImplementation(Depends.Libraries.chucker_no_op)
-    api(Depends.Libraries.apollo_graphql_runtime)
     //test
     testImplementation(Depends.Libraries.junit)
     testImplementation(Depends.Libraries.mockito_core)
@@ -79,5 +63,9 @@ dependencies {
     androidTestImplementation(Depends.Libraries.test_runner)
     androidTestImplementation(Depends.Libraries.espresso_core)
 
+    implementation(project(Depends.Core.navigation))
+    implementation(project(Depends.Core.designSystem))
+    implementation(project(Depends.Core.network))
+    implementation(project(Depends.Common.models))
     implementation(project(Depends.Common.exceptions))
 }

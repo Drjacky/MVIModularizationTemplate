@@ -3,6 +3,7 @@ package app.web.drjackycv.features.characters.presentation
 import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.toBitmap
 import androidx.paging.PagingDataAdapter
@@ -16,7 +17,7 @@ import app.web.drjackycv.features.characters.databinding.CharacterRowBinding
 
 
 class CharactersAdapter(
-    private val onItemClick: (CharacterDetail) -> Unit
+    private val onItemClick: (CharacterDetail, View) -> Unit,
 ) : PagingDataAdapter<CharacterDetail, CharactersAdapter.CharactersViewHolder>(
     CHARACTER_DIFF_CALLBACK
 ) {
@@ -38,20 +39,22 @@ class CharactersAdapter(
     class CharactersViewHolder(private val binding: CharacterRowBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(character: CharacterDetail, onItemClick: (CharacterDetail) -> Unit) {
-            binding.tvId.text = character.id
-            binding.tvName.text = character.name
-            binding.tvSpecies.text = character.species
-            binding.tvGender.text = character.gender
-            binding.imgCharacter.load(
-                url = character.image,
-                placeholderRes = R.drawable.ic_no_image,
-                action = { paintRow(from = it) }
-            )
-            binding.characterRowContainer.setOnReactiveClickListener {
-                onItemClick.invoke(character)
+        fun bind(character: CharacterDetail, onItemClick: (CharacterDetail, View) -> Unit) =
+            with(itemView) {
+                binding.tvId.text = character.id
+                binding.tvName.text = character.name
+                binding.tvSpecies.text = character.species
+                binding.tvGender.text = character.gender
+                binding.imgCharacter.load(
+                    url = character.image,
+                    placeholderRes = app.web.drjackycv.core.designsystem.R.drawable.ic_no_image,
+                    action = { paintRow(from = it) }
+                )
+                binding.characterRowContainer.transitionName = character.id
+                itemView.setOnReactiveClickListener {
+                    onItemClick(character, binding.characterRowContainer)
+                }
             }
-        }
 
         private fun paintRow(from: Drawable) {
             val bitmap = from.toBitmap()

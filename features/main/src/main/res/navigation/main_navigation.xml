@@ -21,4 +21,18 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/character"
+        android:name="app.web.drjackycv.features.character.presentation.Character"
+        tools:layout="@layout/character">
+
+        <argument
+            android:name="character"
+            android:defaultValue="1"
+            app:argType="string" />
+
+        <deepLink app:uri="android-app://app.web.drjackycv/{character}" />
+
+    </fragment>
+
 </navigation>

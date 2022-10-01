@@ -33,12 +33,14 @@ fun View.invisible() {
 fun ImageView.load(
     url: String?,
     @DrawableRes placeholderRes: Int,
+    isCircular: Boolean = false,
     action: ((Drawable) -> Unit),
 ) {
     val safePlaceholderDrawable = AppCompatResources.getDrawable(context, placeholderRes)
     val requestOptions = RequestOptions().apply {
         placeholder(safePlaceholderDrawable)
         error(safePlaceholderDrawable)
+        if (isCircular) circleCrop()
     }
     val glideRequest = GlideApp
         .with(context)

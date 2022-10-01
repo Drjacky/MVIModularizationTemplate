@@ -30,9 +30,7 @@ class Characters : Fragment(R.layout.characters) {
         cleanUp(it)
     }
     private val charactersAdapter: CharactersAdapter by lazy {
-        CharactersAdapter {
-            //no-op
-        }
+        CharactersAdapter(::navigateToCharacterDetail)
     }
 
     private fun cleanUp(binding: CharactersBinding?) {
@@ -134,7 +132,7 @@ class Characters : Fragment(R.layout.characters) {
         }
 
         val request = NavDeepLinkRequest.Builder
-            .fromUri("android-app://app.web.drjackycv/character-detail".toUri())
+            .fromUri("android-app://app.web.drjackycv/${character.id}".toUri())
             .build()
         findNavController().navigate(request = request, navOptions = null, navigatorExtras = extras)
     }

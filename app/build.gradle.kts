@@ -106,4 +106,5 @@ dependencies {
     implementation(project(Depends.Features.splash))
     implementation(project(Depends.Features.main))
     implementation(project(Depends.Features.characters))
+    implementation(project(Depends.Features.character))
 }
