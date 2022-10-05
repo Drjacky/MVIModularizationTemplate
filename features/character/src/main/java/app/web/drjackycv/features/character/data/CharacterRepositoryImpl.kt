@@ -9,6 +9,7 @@ import com.apollographql.apollo3.ApolloClient
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -18,7 +19,7 @@ class CharacterRepositoryImpl @Inject constructor(
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) : CharacterRepository {
 
-    override fun getCharacter(id: String): Flow<CharacterDetail> = //TODO: Handle exception
+    override fun getCharacter(id: String): Flow<CharacterDetail> =
         allowReads {
             flow {
                 val response: GetCharacterQuery.Character =
@@ -28,6 +29,6 @@ class CharacterRepositoryImpl @Inject constructor(
 
                 emit(responseCharacters)
 
-            }
+            }.flowOn(ioDispatcher)
         }
 }
