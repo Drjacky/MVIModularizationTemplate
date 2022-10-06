@@ -4,6 +4,30 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/../.." />
+        <option name="gradleHome" value="$USER_HOME$/.sdkman/candidates/gradle/current" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/../.." />
+            <option value="$PROJECT_DIR$/../../app" />
+            <option value="$PROJECT_DIR$/../../buildSrc" />
+            <option value="$PROJECT_DIR$/../../common" />
+            <option value="$PROJECT_DIR$/../../common/exceptions" />
+            <option value="$PROJECT_DIR$/../../common/models" />
+            <option value="$PROJECT_DIR$/../../core" />
+            <option value="$PROJECT_DIR$/../../core/designSystem" />
+            <option value="$PROJECT_DIR$/../../core/navigation" />
+            <option value="$PROJECT_DIR$/../../core/network" />
+            <option value="$PROJECT_DIR$/../../features" />
+            <option value="$PROJECT_DIR$/../../features/character" />
+            <option value="$PROJECT_DIR$/../../features/characters" />
+            <option value="$PROJECT_DIR$/../../features/main" />
+            <option value="$PROJECT_DIR$/../../features/splash" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />

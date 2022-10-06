@@ -56,7 +56,7 @@ object Depends {
         const val paletteVersion = "1.0.0"
         const val glideVersion = "4.13.1"
         const val dataStorePreferenceVersion = "1.0.0"
-        const val apolloGraphqlVersion = "3.3.0"
+        const val apolloGraphqlVersion = "3.6.1"
         const val arrowVersion = "1.0.1"
 
         const val mockitoKotlinVersion = "2.2.0"
