@@ -30,7 +30,7 @@ object Depends {
         const val targetSdkVersion = 31
         const val minSdkVersion = 21
         const val testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        const val kotlinVersion = "1.7.10"
+        const val kotlinVersion = "1.7.20"
         const val rxKotlinVersion = "3.0.1"
         const val rxAndroidVersion = "3.0.0"
         const val rxJavaVersion = "3.1.4"
@@ -48,7 +48,7 @@ object Depends {
         const val multidexVersion = "2.0.1"
         const val fragmentExtVersion = "1.5.0-alpha05"
         const val recyclerviewVersion = "1.3.0-alpha02"
-        const val hiltVersion = "2.42"
+        const val hiltVersion = "2.44"
         const val hiltCompilerVersion = "1.0.0"
         const val javaxInjectVersion = "1"
         const val timberVersion = "5.0.1"
@@ -56,7 +56,7 @@ object Depends {
         const val paletteVersion = "1.0.0"
         const val glideVersion = "4.13.1"
         const val dataStorePreferenceVersion = "1.0.0"
-        const val apolloGraphqlVersion = "3.6.1"
+        const val apolloGraphqlVersion = "3.6.2"
         const val arrowVersion = "1.0.1"
 
         const val mockitoKotlinVersion = "2.2.0"
