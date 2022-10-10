@@ -3,6 +3,7 @@ package app.web.drjackycv.features.character.presentation
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -26,13 +27,16 @@ class Character : Fragment(R.layout.character) {
     }
 
     private fun setupUI() {
+        postponeEnterTransition()
         characterViewModel.run {
             character.collectIn(viewLifecycleOwner) {
                 displayCharacter(it)
+                view?.doOnPreDraw { startPostponedEnterTransition() }
             }
 
             failure.collectIn(viewLifecycleOwner) {
                 handleFailure(it)
+                view?.doOnPreDraw { startPostponedEnterTransition() }
             }
         }
     }
@@ -42,17 +46,21 @@ class Character : Fragment(R.layout.character) {
             is CharacterUiState.Success -> {
                 loadingUI(false)
                 setSharedElementTransitionOnEnter()
+                setSharedElementTransitionOnReturn()
                 uiState.item?.let {
                     binding.characterContainer.visible()
-                    binding.characterContainer.transitionName = it.id
+                    binding.imgCharacter.transitionName = it.image
                     binding.imgCharacter.load(
                         url = it.image,
                         placeholderRes = app.web.drjackycv.core.designsystem.R.drawable.ic_no_image,
                         isCircular = true,
                         action = {}
                     )
+                    binding.tvName.transitionName = it.name
                     binding.tvName.text = it.name.titleCase()
+                    binding.tvGender.transitionName = it.gender
                     binding.tvGender.text = it.gender.titleCase()
+                    binding.tvSpecies.transitionName = it.species
                     binding.tvSpecies.text = it.species.titleCase()
                     binding.tvLocation.text = it.location.name.titleCase()
                     binding.tvStatus.text = it.status.titleCase()
@@ -73,6 +81,17 @@ class Character : Fragment(R.layout.character) {
 
     private fun setSharedElementTransitionOnEnter() {
         sharedElementEnterTransition = MaterialContainerTransform().apply {
+            duration = 400L
+            isElevationShadowEnabled = true
+            pathMotion = MaterialArcMotion()
+            startElevation = 9f
+            endElevation = 9f
+            scrimColor = Color.TRANSPARENT
+        }
+    }
+
+    private fun setSharedElementTransitionOnReturn() {
+        sharedElementReturnTransition = MaterialContainerTransform().apply {
             duration = 400L
             isElevationShadowEnabled = true
             pathMotion = MaterialArcMotion()

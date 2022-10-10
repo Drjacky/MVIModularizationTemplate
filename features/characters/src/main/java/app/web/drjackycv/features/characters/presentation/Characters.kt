@@ -17,6 +17,7 @@ import app.web.drjackycv.common.exceptions.Failure
 import app.web.drjackycv.common.models.fragment.CharacterDetail
 import app.web.drjackycv.core.designsystem.*
 import app.web.drjackycv.features.characters.R
+import app.web.drjackycv.features.characters.databinding.CharacterRowBinding
 import app.web.drjackycv.features.characters.databinding.CharactersBinding
 import com.google.android.material.transition.platform.Hold
 import com.google.android.material.transition.platform.MaterialElevationScale
@@ -43,6 +44,7 @@ class Characters : Fragment(R.layout.characters) {
     }
 
     private fun setupRecyclerView() {
+        postponeEnterTransition()
         binding.inclItemError.itemErrorContainer.gone()
         val footerAdapter = LoadingStateAdapter()
         binding.rvCharactersList.adapter =
@@ -62,8 +64,6 @@ class Characters : Fragment(R.layout.characters) {
         charactersAdapter.stateRestorationPolicy =
             RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
         //binding.rvCharactersList.itemAnimator = null
-        postponeEnterTransition()
-        view?.doOnPreDraw { startPostponedEnterTransition() }
     }
 
     private fun setupUI() {
@@ -72,10 +72,12 @@ class Characters : Fragment(R.layout.characters) {
         charactersListViewModel.run {
             charactersList.collectIn(viewLifecycleOwner) {
                 addCharactersList(it)
+                view?.doOnPreDraw { startPostponedEnterTransition() }
             }
 
             failure.collectIn(viewLifecycleOwner) {
                 handleFailure(it)
+                view?.doOnPreDraw { startPostponedEnterTransition() }
             }
         }
     }
@@ -120,9 +122,16 @@ class Characters : Fragment(R.layout.characters) {
         }
     }
 
-    private fun navigateToCharacterDetail(character: CharacterDetail, view: View) {
+    private fun navigateToCharacterDetail(
+        character: CharacterDetail,
+        binding: CharacterRowBinding
+    ) {
         val extras = FragmentNavigatorExtras(
-            view to character.id
+            binding.imgCharacter to character.image,
+            binding.tvName to character.name,
+            binding.tvSpecies to character.species,
+            binding.tvId to character.id,
+            binding.tvGender to character.gender,
         )
         exitTransition = Hold().apply {
             duration = resources.getInteger(R.integer.motion_duration_large).toLong()
