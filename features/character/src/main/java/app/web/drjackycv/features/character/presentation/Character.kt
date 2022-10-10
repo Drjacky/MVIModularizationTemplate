@@ -51,11 +51,11 @@ class Character : Fragment(R.layout.character) {
                         isCircular = true,
                         action = {}
                     )
-                    binding.tvName.text = it.name
-                    binding.tvGender.text = it.gender
-                    binding.tvSpecies.text = it.species
-                    binding.tvLocation.text = it.location.name
-                    binding.tvStatus.text = it.status
+                    binding.tvName.text = it.name.titleCase()
+                    binding.tvGender.text = it.gender.titleCase()
+                    binding.tvSpecies.text = it.species.titleCase()
+                    binding.tvLocation.text = it.location.name.titleCase()
+                    binding.tvStatus.text = it.status.titleCase()
                 } ?: run {
                     characterViewModel.handleFailure(Throwable()) { retryFetchData() }
                 }

@@ -87,3 +87,5 @@ fun View.setOnReactiveClickListener(windowDuration: Long = 500, action: (() -> U
                 stack = throwable.stackTrace
             )
         })
+
+fun String.titleCase(): String = replaceFirstChar { it.uppercase() }
