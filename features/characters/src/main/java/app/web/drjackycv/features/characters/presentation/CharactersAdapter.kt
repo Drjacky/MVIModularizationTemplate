@@ -14,6 +14,7 @@ import app.web.drjackycv.core.designsystem.load
 import app.web.drjackycv.core.designsystem.setOnReactiveClickListener
 import app.web.drjackycv.features.characters.R
 import app.web.drjackycv.features.characters.databinding.CharacterRowBinding
+import java.util.*
 
 
 class CharactersAdapter(
@@ -63,7 +64,7 @@ class CharactersAdapter(
                 .lightVibrantSwatch
 
             vibrant?.let {
-                val hexColor = String.format("#%06X", 0xFFFFFF and it.rgb)
+                val hexColor = String.format(Locale.getDefault(), "#%06X", 0xFFFFFF and it.rgb)
                 binding.characterRow.setBackgroundColor(Color.parseColor(hexColor))
             }
         }
