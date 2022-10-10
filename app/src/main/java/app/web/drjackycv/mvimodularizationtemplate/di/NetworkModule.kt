@@ -18,12 +18,14 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import javax.inject.Singleton
 
+private const val MAX_SIZE_BYTE = 10 * 1024 * 1024
+
 @InstallIn(SingletonComponent::class)
 @Module
 class NetworkModule {
 
     // Creates a 10MB MemoryCacheFactory
-    val cacheFactory = MemoryCacheFactory(maxSizeBytes = 10 * 1024 * 1024)
+    private val cacheFactory = MemoryCacheFactory(maxSizeBytes = MAX_SIZE_BYTE)
 
     @Provides
     @Singleton

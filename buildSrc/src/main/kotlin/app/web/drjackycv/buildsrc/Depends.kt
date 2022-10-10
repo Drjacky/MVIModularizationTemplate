@@ -5,22 +5,22 @@ import app.web.drjackycv.buildsrc.Depends.Versions.appVersionCode
 object Depends {
 
     object Features {
-        val splash = ":features:splash"
-        val main = ":features:main"
-        val characters = ":features:characters"
-        val character = ":features:character"
+        const val splash = ":features:splash"
+        const val main = ":features:main"
+        const val characters = ":features:characters"
+        const val character = ":features:character"
     }
 
     object Core {
-        val designSystem = ":core:designSystem"
-        val network = ":core:network"
-        val navigation = ":core:navigation"
+        const val designSystem = ":core:designSystem"
+        const val network = ":core:network"
+        const val navigation = ":core:navigation"
     }
 
     object Common {
-        val models = ":common:models"
-        val exceptions = ":common:exceptions"
-        val utils = ":utils"
+        const val models = ":common:models"
+        const val exceptions = ":common:exceptions"
+        const val utils = ":utils"
     }
 
     object Versions {
