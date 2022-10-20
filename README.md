@@ -55,7 +55,7 @@ button to create a new repo starting from this template.
 
 ## Under Development 🚧
 
-- Add detail screen
+- ~~Add detail screen~~
 
 ## CI 🏭
 
