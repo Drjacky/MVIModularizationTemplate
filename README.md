@@ -34,7 +34,6 @@ button to create a new repo starting from this template.
 - [Retrofit](https://github.com/square/retrofit) - HTTP client
 - [Glide](https://github.com/bumptech/glide) - Loading images
 - [Timber](https://github.com/JakeWharton/timber) - Log
-- [Gson](https://github.com/google/gson) - JSON library
 - [Material Components](https://github.com/material-components/material-components-android) -
   Material Design
 - [Lottie](https://airbnb.design/lottie/) - Vector animation library
