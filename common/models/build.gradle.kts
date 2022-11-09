@@ -2,7 +2,7 @@ import app.web.drjackycv.buildsrc.Depends
 
 plugins {
     id("common-android-lib")
-    id("com.apollographql.apollo3") version app.web.drjackycv.buildsrc.Depends.Versions.apolloGraphqlVersion
+    id("com.apollographql.apollo3") version 3.7.0
 }
 
 android {
