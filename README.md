@@ -4,6 +4,12 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDrjacky%2FMVIModularizationTemplate.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FDrjacky%2FMVIModularizationTemplate?ref=badge_shield) [![CodeScene Code Health](https://codescene.io/projects/29432/status-badges/code-health)](https://codescene.io/projects/29432)
 <!-- [![Known Vulnerabilities](https://snyk.io/test/github/Drjacky/MVIModularizationTemplate/badge.svg)](https://snyk.io/test/github/Drjacky/MVIModularizationTemplate) Snyk doesn't support kotlin dsl -->
 
+##
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Drjacky/MVIModularizationTemplate/master/gif/logo.png" />
+</p>
+
 A simple Android template that lets you create an **Android** project quickly.
 
 ## How to use 👣
