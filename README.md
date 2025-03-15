@@ -98,3 +98,7 @@ Feel free to open an issue or submit a pull request for any bugs/improvements.
 ## License ⚖️
 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDrjacky%2FMVIModularizationTemplate.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FDrjacky%2FMVIModularizationTemplate?ref=badge_large)
+
+## Star History Chart 
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Drjacky/MVIModularizationTemplate&Date&type=Date)](https://star-history.com/#Drjacky/MVIModularizationTemplate&Date&Date)
